@@ -31,6 +31,17 @@ app.use('/api/v1/discover', discover);
 
 app.use(errorHandler);
 
+// TAKE OUT IF NO WORK
+if (process.env.NODE_ENV === 'production') {
+  // set statuc folder
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  });
+}
+//END TAKEOUT
+
 const PORT = process.env.PORT || 5000;
 
 const server = app.listen(
