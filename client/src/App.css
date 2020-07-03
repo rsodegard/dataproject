@@ -1,7 +1,7 @@
 :root {
-  --primary-color: #447ddc;
+  --primary-color: #233c15;
   --background-color: #f4f4f4;
-  --nav-color: #4c8bf5;
+  --nav-color: #fff;
   --secondary-color: #a66bbe;
   --button-open: #ffad32;
   --button-filled: #ff9900;
@@ -245,7 +245,7 @@ img {
 }
 
 .card {
-  background: #fff;
+  background: inherit;
   padding: 1rem !important;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
@@ -278,8 +278,11 @@ img {
 } */
 
 .normal-form-card {
-  border: 1px #777 solid;
-  border-radius: 10px;
+  box-shadow: none;
+}
+
+.normal-form-card:hover {
+  box-shadow: none;
 }
 
 .normal-form-label label {
@@ -322,7 +325,8 @@ img {
 #main-nav {
   background: var(--nav-color);
   /* #fff and dark color below */
-  color: #fff;
+  color: var(--primary-color);
+  opacity: 0.9;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -330,7 +334,7 @@ img {
 
 #main-nav .container {
   display: grid;
-  grid-template-columns: 2fr 4fr 3fr;
+  grid-template-columns: 1fr;
   padding: 1rem;
   align-items: center;
 }
@@ -340,7 +344,8 @@ img {
 }
 
 #main-nav a {
-  color: #fff;
+  color: var(--primary-color);
+  justify-self: center;
 }
 
 #main-nav ul {
@@ -634,7 +639,7 @@ img {
 #sexy-forms .sexy-forms-container textarea:focus {
   outline: 0;
   border: none;
-  border: 2px solid #3f51b5;
+  border: 2px solid #138623;
   box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
   background-color: #fff4e3;
 }
@@ -643,7 +648,7 @@ img {
 #sexy-forms .sexy-forms-container input[type='text']:hover,
 #sexy-forms .sexy-forms-container input[type='password']:hover,
 #sexy-forms .sexy-forms-container textarea:hover {
-  border: 2px solid #3f51b5;
+  border: 2px solid var(--primary-color);
   box-shadow: 0 5px 5px -5px lightgrey;
   background-color: #fff4e3;
 }
@@ -652,7 +657,7 @@ img {
 #sexy-forms .sexy-forms-container input[type='text']:hover::placeholder,
 #sexy-forms .sexy-forms-container input[type='password']:hover::placeholder,
 #sexy-forms .sexy-forms-container textarea:hover::placeholder {
-  color: #3f51b5;
+  color: var(--primary-color);
 }
 
 #sexy-forms .sexy-forms-container textarea::placeholder {
@@ -701,7 +706,7 @@ img {
 #chat-forms .chat-forms-container input[type='text']:focus {
   outline: 0;
   border: none;
-  border: 2px solid #3f51b5;
+  border: 2px solid var(--primary-color);
   box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.2);
   background-color: #fff4e3;
 }
