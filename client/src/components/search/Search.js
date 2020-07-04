@@ -13,6 +13,7 @@ const Search = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     console.log(formData);
   };
 
@@ -23,9 +24,9 @@ const Search = (props) => {
           <div className='sexy-forms-container'>
             <div className='card normal-form-card'>
               <div className='sexy-forms-wrapper'>
-                <form onSubmit={(e) => onSubmit(e)}>
+                <form onSubmit={(e) => onSubmit(e)} className='eightytwenty'>
                   <div className='normal-form-label'>
-                    <label htmlFor=''>Search</label>
+                    {/* <label htmlFor=''>Search</label> */}
                     <input
                       type='text'
                       name='search'
@@ -36,8 +37,8 @@ const Search = (props) => {
                   </div>
                   <input
                     type='submit'
-                    value='Submit'
-                    className='btn btn-open-circle mt-1 py-1'
+                    value='Search'
+                    className=' btn-open-circle'
                   />
                 </form>
               </div>
