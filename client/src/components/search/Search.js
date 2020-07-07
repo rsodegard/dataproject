@@ -1,9 +1,11 @@
 import React, { Fragment, useState } from 'react';
+import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 
 const Search = (props) => {
   const [formData, setFormData] = useState({
     search: '',
+    results: [],
   });
 
   const { search } = formData;
@@ -11,10 +13,27 @@ const Search = (props) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    try {
+      const searchCap = search.toUpperCase();
+      const silk = searchCap.split(' ');
+      console.log(silk);
+      if (!silk[1]) {
+        const res = await axios.get(`/api/v1/discover/?FirstName=${silk[0]}`);
+        console.log(res.data);
+      } else {
+        const res = await axios.get(
+          `/api/v1/discover/?FirstName=${silk[0]}|LastName=${silk[1]}`
+        );
+        console.log(res.data);
+      }
+    } catch (err) {
+      console.error(err.response.data);
+    }
+
+    setFormData({ search: '' });
   };
 
   return (
