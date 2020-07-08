@@ -1,16 +1,13 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useState, useEffect } from 'react';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import { useEffect } from 'react';
 
-const Search = (props) => {
+const Search = () => {
   const [formData, setFormData] = useState({
     search: '',
   });
 
-  const [results, setResults] = useState({
-    resultList: [],
-  });
+  const [results, setResults] = useState([]);
 
   const { search } = formData;
 
@@ -19,7 +16,6 @@ const Search = (props) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const searchCap = search.toUpperCase();
       const silk = searchCap.split(' ');
@@ -27,14 +23,14 @@ const Search = (props) => {
       if (!silk[1]) {
         const res = await axios.get(`/api/v1/discover/?FirstName=${silk[0]}`);
         setResults('');
-        setResults(res.data);
+        setResults({ results: res.data });
         console.log(res.data);
       } else {
         const res = await axios.get(
           `/api/v1/discover/?FirstName=${silk[0]}&LastName=${silk[1]}`
         );
         setResults('');
-        setResults(res.data);
+        setResults({ results: res.data });
         console.log(res.data);
       }
     } catch (err) {
@@ -43,6 +39,10 @@ const Search = (props) => {
     setFormData({ search: '' });
     //Need to clear the state for results on new search
   };
+
+  // useEffect(() => {
+  //   setResults({ results: res.data });
+  // }, []);
 
   return (
     <Fragment>
@@ -72,6 +72,16 @@ const Search = (props) => {
             </div>
           </div>
         </section>
+        {/* <section>
+          <div>Results Displayed below</div>
+          {!results.data ? (
+            'none'
+          ) : (
+            <Fragment>
+              <div>{results.data[0].address}</div>
+            </Fragment>
+          )}
+        </section> */}
       </div>
     </Fragment>
   );
