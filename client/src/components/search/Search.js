@@ -7,12 +7,22 @@ const Search = () => {
     search: '',
   });
 
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState({
+    results: [],
+  });
 
   const { search } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
+  const fetchData = async () => {
+    try {
+      setResults(results);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -40,9 +50,11 @@ const Search = () => {
     //Need to clear the state for results on new search
   };
 
-  // useEffect(() => {
-  //   setResults({ results: res.data });
-  // }, []);
+  //Only run when onSubmit changes if put in array
+  useEffect(() => {
+    fetchData();
+    //document.whatever = 'number of results is ${results.length}' - then put {results} in the template.
+  }, []);
 
   return (
     <Fragment>
@@ -72,16 +84,19 @@ const Search = () => {
             </div>
           </div>
         </section>
-        {/* <section>
-          <div>Results Displayed below</div>
-          {!results.data ? (
-            'none'
-          ) : (
-            <Fragment>
-              <div>{results.data[0].address}</div>
-            </Fragment>
-          )}
-        </section> */}
+        <section>
+          <div>{!results ? 'No results' : console.log(results)}</div>
+        </section>
+        <section>
+          <div className='card'>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
+            perferendis autem, dolorum ut eum ad sapiente perspiciatis, minus id
+            minima explicabo, alias quod et ex in repellat eveniet laboriosam!
+            Deserunt cum impedit quos dolore eos iusto, laboriosam, accusantium
+            harum non debitis enim fugiat recusandae deleniti magni soluta
+            corporis obcaecati nemo.
+          </div>
+        </section>
       </div>
     </Fragment>
   );
