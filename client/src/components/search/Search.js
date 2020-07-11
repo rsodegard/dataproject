@@ -50,11 +50,12 @@ const Search = () => {
     //Need to clear the state for results on new search
   };
 
+  let ele = document.getElementById('ele')
+
   //Only run when onSubmit changes if put in array
   useEffect(() => {
     fetchData();
-    //document.whatever = 'number of results is ${results.length}' - then put {results} in the template.
-  }, []);
+  }, [onSubmit]);
 
   return (
     <Fragment>
@@ -96,6 +97,7 @@ const Search = () => {
             harum non debitis enim fugiat recusandae deleniti magni soluta
             corporis obcaecati nemo.
           </div>
+  
         </section>
       </div>
     </Fragment>
