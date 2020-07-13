@@ -50,8 +50,6 @@ const Search = () => {
     //Need to clear the state for results on new search
   };
 
-  let ele = document.getElementById('ele')
-
   //Only run when onSubmit changes if put in array
   useEffect(() => {
     fetchData();
@@ -59,26 +57,26 @@ const Search = () => {
 
   return (
     <Fragment>
-      <div className='container'>
-        <section id='sexy-forms'>
-          <div className='sexy-forms-container'>
-            <div className='card normal-form-card'>
-              <div className='sexy-forms-wrapper'>
-                <form onSubmit={(e) => onSubmit(e)} className='eightytwenty'>
-                  <div className='normal-form-label'>
+      <div className="container">
+        <section id="sexy-forms">
+          <div className="sexy-forms-container">
+            <div className="card normal-form-card">
+              <div className="sexy-forms-wrapper">
+                <form onSubmit={(e) => onSubmit(e)} className="eightytwenty">
+                  <div className="normal-form-label">
                     {/* <label htmlFor=''>Search</label> */}
                     <input
-                      type='text'
-                      name='search'
-                      placeholder='John Doe'
+                      type="text"
+                      name="search"
+                      placeholder="John Doe"
                       value={search}
                       onChange={(e) => onChange(e)}
                     />
                   </div>
                   <input
-                    type='submit'
-                    value='Search'
-                    className=' btn-open-circle'
+                    type="submit"
+                    value="Search"
+                    className=" btn-open-circle"
                   />
                 </form>
               </div>
@@ -89,7 +87,7 @@ const Search = () => {
           <div>{!results ? 'No results' : console.log(results)}</div>
         </section>
         <section>
-          <div className='card'>
+          <div className="card">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
             perferendis autem, dolorum ut eum ad sapiente perspiciatis, minus id
             minima explicabo, alias quod et ex in repellat eveniet laboriosam!
@@ -97,7 +95,6 @@ const Search = () => {
             harum non debitis enim fugiat recusandae deleniti magni soluta
             corporis obcaecati nemo.
           </div>
-  
         </section>
       </div>
     </Fragment>
