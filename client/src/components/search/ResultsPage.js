@@ -14,13 +14,15 @@ const ResultsPage = ({ getResults, result: { results, loading } }) => {
   ) : (
     <Fragment>
       <div className="container">
-        <section>Hello{results.count}</section>
+        <section>Results: {results.count}</section>
         <section>
-          {results.count > 0
-            ? results.data.map((result) => (
-                <ResultItem key={result._id} result={result} />
-              ))
-            : 'No Results'}
+          <div className="results-container">
+            {results.count > 0
+              ? results.data.map((result) => (
+                  <ResultItem key={result._id} result={result} />
+                ))
+              : ''}
+          </div>
         </section>
       </div>
     </Fragment>
