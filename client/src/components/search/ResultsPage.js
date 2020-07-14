@@ -2,8 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
+import ResultItem from './ResultItem';
 import { getResults } from '../../actions/search';
-import result from '../../reducers/result';
 
 const ResultsPage = ({ getResults, result: { results, loading } }) => {
   useEffect(() => {
@@ -15,6 +15,13 @@ const ResultsPage = ({ getResults, result: { results, loading } }) => {
     <Fragment>
       <div className="container">
         <section>Hello{results.count}</section>
+        <section>
+          {results.count > 0
+            ? results.data.map((result) => (
+                <ResultItem key={result._id} result={result} />
+              ))
+            : 'No Results'}
+        </section>
       </div>
     </Fragment>
   );
