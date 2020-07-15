@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 
 const TgovernorSchema = new mongoose.Schema({
+  // _id: {
+  //   type: String,
+  // },
   Ubi: {
     type: String,
-    unique: true,
   },
   Title: {
     type: String,
