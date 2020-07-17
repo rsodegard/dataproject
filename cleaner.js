@@ -5,15 +5,15 @@ const dotenv = require('dotenv');
 
 dotenv.config({ path: './config/config.env' });
 
-// const Tgovernor = require('./models/Tgovernor');
+const Tgovernor = require('./models/Tgovernor');
 
-// // mongoose connect
-// mongoose.connect(process.env.MONGO_URI, {
-//     useNewUrlParser: true,
-//     useCreateIndex: true,
-//     useFindAndModify: false,
-//     useUnifiedTopology: true,
-//   });
+// mongoose connect
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+});
 
 // read json files
 const tgovernors = JSON.parse(
@@ -21,11 +21,16 @@ const tgovernors = JSON.parse(
 );
 
 //Successfully adds { _id: Hello }
-const cleanData = (array) => {
+const cleanData = async (array) => {
   for (i = 0; i < array.length; i++) {
     let x = array[i];
-    x._id = 'Hello';
-    console.log(x);
+    try {
+      x._id = Date.now() + i;
+      console.log(x);
+    } catch (error) {
+      console.log(`Error ${error}`);
+      continue;
+    }
   }
 };
 
