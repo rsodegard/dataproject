@@ -26,9 +26,23 @@ const cleanData = async (array) => {
     let x = array[i];
     try {
       x._id = Date.now() + i;
+      // write to a json file first, to see if it works, before throwing in DB
+      // fs.appendFile(`outputLog.txt`, `${x}`, (err) => {
+      //   if (err) throw err;
+      //   console.log('Error in output');
+      // });
+      // await Tgovernor.create(array[i]);
       console.log(x);
     } catch (error) {
-      console.log(`Error ${error}`);
+      fs.appendFile(
+        'errorLog.txt',
+        `\nError ${error} in sequence ${i}`,
+        (err) => {
+          if (err) throw err;
+          console.log('Error logged in errorLog.txt');
+        }
+      );
+      console.log(`Error ${error} in sequence ${i}`);
       continue;
     }
   }
