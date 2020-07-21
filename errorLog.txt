@@ -1,42 +1,15 @@
-Error TypeError: x.shift is not a function in sequence 12
-Error TypeError: x.shift is not a function in sequence 0
-Error TypeError: x.shift is not a function in sequence 4
-Error TypeError: x.shift is not a function in sequence 5
-Error TypeError: x.shift is not a function in sequence 6
-Error TypeError: x.shift is not a function in sequence 7
-Error TypeError: x.shift is not a function in sequence 8
-Error TypeError: x.shift is not a function in sequence 9
-Error TypeError: x.shift is not a function in sequence 10
-Error TypeError: x.shift is not a function in sequence 11
-Error TypeError: x.shift is not a function in sequence 12
-Error TypeError: x.shift is not a function in sequence 1
-Error TypeError: x.shift is not a function in sequence 2
-Error TypeError: x.shift is not a function in sequence 3
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 0
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 1
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 5
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 6
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 7
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 8
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 9
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 10
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 11
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 3
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 13
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 4
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 12
-Error TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined in sequence 2
-Error TypeError: x.shift is not a function in sequence 0
-Error TypeError: x.shift is not a function in sequence 1
-Error TypeError: x.shift is not a function in sequence 5
-Error TypeError: x.shift is not a function in sequence 6
-Error TypeError: x.shift is not a function in sequence 7
-Error TypeError: x.shift is not a function in sequence 8
-Error TypeError: x.shift is not a function in sequence 9
-Error TypeError: x.shift is not a function in sequence 10
-Error TypeError: x.shift is not a function in sequence 11
-Error TypeError: x.shift is not a function in sequence 12
-Error TypeError: x.shift is not a function in sequence 13
-Error TypeError: x.shift is not a function in sequence 3
-Error TypeError: x.shift is not a function in sequence 4
-Error TypeError: x.shift is not a function in sequence 2
+
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 0
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 4
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 5
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 6
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 7
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 8
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 9
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 10
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 11
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 12
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 13
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 1
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 3
+Error SyntaxError: Unexpected token o in JSON at position 1 in sequence 2
