@@ -20,7 +20,7 @@ const tgovernors = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/TestData.json`, 'utf-8')
 );
 
-//Successfully adds { _id: Hello }
+//Successfully adds { _id: 2384723872 }
 const cleanData = async (array) => {
   for (i = 0; i < array.length; i++) {
     let x = array[i];
@@ -28,10 +28,14 @@ const cleanData = async (array) => {
       x._id = Date.now() + i;
       // write to a json file first, to see if it works, before throwing in DB
       var successItem = JSON.stringify(x);
-      fs.appendFile(`outputLog.json`, `,${successItem}`, (err) => {
-        if (err) throw err;
-        console.log('Error in output');
-      });
+      fs.appendFile(
+        `${__dirname}/_data/TestDataCleaned.json`,
+        `,${successItem}`,
+        (err) => {
+          if (err) throw err;
+          console.log(error);
+        }
+      );
       // await Tgovernor.create(array[i]);
       console.log(successItem);
     } catch (error) {
@@ -50,6 +54,10 @@ const cleanData = async (array) => {
 };
 
 cleanData(tgovernors);
+
+//Need to If statement to add [ and ] for last and first entries as well. Need to learn how to continue iteriation with error in any given entry.
+
+//I need to use a streaming parser, this allows me to put a small amount of data at a time into memory.
 
 //Need to control for (1) same UBI, (2) random TC^Key index, (3) if there's an error skip and go to next, (4) log errors that are skipped, (5) other errors with the data such as missing names etc.
 

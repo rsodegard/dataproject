@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // read json files
 const tgovernors = JSON.parse(
-  fs.readFileSync(`${__dirname}/_data/TestData.json`, 'utf-8')
+  fs.readFileSync(`${__dirname}/_data/TestDataCleaned.json`, 'utf-8')
 );
 
 const importData = async () => {
