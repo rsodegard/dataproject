@@ -20,6 +20,10 @@ const tgovernors = JSON.parse(
   fs.readFileSync(`${__dirname}/_data/TestData.json`, 'utf-8')
 );
 
+const largefile = JSON.parse(
+  fs.readFileSync(`${__dirname}/_data/TestData.json`, 'utf-8')
+);
+
 //Successfully adds { _id: 2384723872 }
 const cleanData = async (array) => {
   for (i = 0; i < array.length; i++) {
@@ -29,7 +33,7 @@ const cleanData = async (array) => {
       // write to a json file first, to see if it works, before throwing in DB
       var successItem = JSON.stringify(x);
       fs.appendFile(
-        `${__dirname}/_data/TestDataCleaned.json`,
+        `${__dirname}/_data/largefileCleaned.json`,
         `,${successItem}`,
         (err) => {
           if (err) throw err;
@@ -53,7 +57,7 @@ const cleanData = async (array) => {
   }
 };
 
-cleanData(tgovernors);
+cleanData(largefile);
 
 //Need to If statement to add [ and ] for last and first entries as well. Need to learn how to continue iteriation with error in any given entry.
 
