@@ -66,3 +66,7 @@ cleanData(largefile);
 //Need to control for (1) same UBI, (2) random TC^Key index, (3) if there's an error skip and go to next, (4) log errors that are skipped, (5) other errors with the data such as missing names etc.
 
 //On front, you will need to figure out what is going on with the state onthe search, how to limit results.
+
+//You'll need to use a parser, and you need to figure out a way to write into file before heap crash.
+
+//What was interesting is that when you put the whole file through the cleaner, it consol logged a shit ton fo data, and created governingPersonsCleaned, but it did not write the data to it.
